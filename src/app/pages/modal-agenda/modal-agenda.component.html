@@ -1,0 +1,78 @@
+<h2 mat-dialog-title>Agendar Compromisso</h2>
+<mat-dialog-content class="mat-typography">
+
+  <form class="container" [formGroup]="agendaForm">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group ">
+          <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1"
+            formControlName="nome">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group ">
+          <input type="text" class="form-control" placeholder="Inicio" aria-label="Inicio" disabled="disabled"
+            aria-describedby="basic-addon1" formControlName="inicio">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group ">
+          <div class="form-group ">
+            <input type="text" class="form-control" placeholder="Fim" aria-label="Fim" aria-describedby="basic-addon1" disabled="disabled"
+              formControlName="fim">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group ">
+          <div class="form-group ">
+            <input type="text" class="form-control" placeholder="Hora Inicial" aria-label="horaInicio"
+              aria-describedby="basic-addon1" formControlName="horaInicio">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group ">
+          <div class="form-group ">
+            <input type="text" class="form-control" placeholder="Hora Final" aria-label="horaFim"
+              aria-describedby="basic-addon1" formControlName="horaFim">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group ">
+          <div class="form-group ">
+            <input type="text" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1"
+              formControlName="cpf">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group ">
+          <div class="form-group ">
+            <input type="text" class="form-control" placeholder="Endereço" aria-label="endereco"
+              aria-describedby="basic-addon1" formControlName="endereco">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group ">
+          <div class="form-group ">
+            <input type="text" class="form-control" placeholder="Telefone" aria-label="telefone"
+              aria-describedby="basic-addon1" formControlName="telefone">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div  *ngIf="salvoComSucesso" class="alert alert-success" role="alert" style="margin-right: 12px;">
+    Compromisso salvo com sucesso!
+  </div>
+  <button class="btn btn-warning" style="margin-right: 6px;" mat-button mat-dialog-close>Sair</button>
+  <button class="btn btn-success" (click)="criarCompromisso()">Salvar</button>
+
+</mat-dialog-actions>

@@ -1,0 +1,52 @@
+ <mat-grid-list cols="2" id="calendario_flex" >
+    <mat-grid-tile id="matGridTile">
+        <div flex id="flex">
+            <full-calendar *ngIf='calendarVisible' [options]='calendarOptions' id="fullCalendar"></full-calendar>
+        </div>
+        <div flex id="flex">
+            <h3>Historico de horarios marcados</h3>
+            <div class='demo-app-sidebar'>
+                <div class='demo-app-sidebar-section'>
+                    <h2>Instructions</h2>
+                    <ul>
+                        <li>Lista de agenda</li>
+                    </ul>
+                </div>
+                <div class='demo-app-sidebar-section'>
+                    <label>
+                <input
+                type='checkbox'
+                [checked]='calendarVisible'
+                (change)='handleCalendarToggle()'
+                />
+                Exibir Calendatrio
+            </label>
+                </div>
+                <div class='demo-app-sidebar-section'>
+                    <label>
+                <input
+                type='checkbox'
+                [checked]='calendarOptions.weekends'
+                (change)='handleWeekendsToggle()'
+                />
+                Exibir Fim de Semana
+            </label>
+                </div>
+                <div class='demo-app-sidebar-section'>
+                    <h2>Todas as Datas ({{currentEvents.length}})</h2>
+                    <ul>
+                        <li *ngFor='let event of datasReservadas'>
+                            <b>{{event.dataInicio | date:'dd-MM-yyyy':'pt-br'}}</b>
+                            <i> - {{event.title}}</i>
+                            <i> - {{event.horaInicio}}</i>
+                            <i> até </i>
+                            <i> {{event.horaFim}}</i>
+                            <br>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

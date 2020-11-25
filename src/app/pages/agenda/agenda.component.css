@@ -1,0 +1,23 @@
+#calendario_flex{
+    /* margin: 30px 15px 15px 15px; */
+    padding-bottom: calc(1 * ((45% - 0.5px) * 1) + 0px + 0px) !important;
+    overflow: hidden;
+    left: -18% !important;
+}
+
+#fullCalendar{
+    padding-left: 35px;
+    width: 900px;
+    height: 600px;
+}
+
+#matGridTile{
+    position: static !important;
+    left: auto !important;
+    width: initial !important;
+    margin-top: initial !important;
+    padding-top: revert !important;
+}
+#flex{
+    padding-left: 30px;
+}
